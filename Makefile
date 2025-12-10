@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pthread
 NAME = a.out
-SRC = src/main.c src/arg_validation.c src/init_list.c src/threads_proces.c
+SRC = src/main.c src/arg_validation.c src/init_list.c src/threads_proces.c src/utils.c
 
 all: $(NAME)
 

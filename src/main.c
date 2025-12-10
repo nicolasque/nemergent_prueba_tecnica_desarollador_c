@@ -18,6 +18,8 @@ int main(int argc, char **argv)
 
 	launch_threads(n_threads, n_items, &positive_list, &negative_list);
 
+	print_list(&positive_list);
+	print_list(&negative_list);
 
 	return 0;
 }
