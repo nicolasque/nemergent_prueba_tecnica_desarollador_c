@@ -20,5 +20,7 @@ int main(int argc, char **argv)
 	printf("======Lista de numeros negativos========\n");
 	print_list(&negative_list);
 
+	free_list(&positive_list);
+	free_list(&negative_list);
 	return 0;
 }
