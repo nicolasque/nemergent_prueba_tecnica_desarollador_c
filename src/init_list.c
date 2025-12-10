@@ -1,16 +1,24 @@
 #include "../includes/number_list.h"
 
-void init_list(NumberList *list, int n_items)
+void init_list(NumberList *list, int n_items, int n_threads)
 {
-	if (!list)
+	list->count = 0;
+	size_t total_numbers = (size_t)n_threads * (size_t)n_items;
+	size_t estimated_capacity = (total_numbers / 2);
+
+	list->capacity = estimated_capacity;
+
+	list->data = malloc(list->capacity * sizeof(int));
+	if (!list->data)
 	{
-		fprintf(stderr, "Error: No se ha dado ninguna lista.\n");
-        exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: Fallo fatal al asignar memoria inicial.\n");
+		exit(EXIT_FAILURE);
 	}
 
-	(void)n_items;
-	list->data = NULL;
-	list->capacity = 0;
-	list->count = 0;
-
+	if (pthread_mutex_init(&list->mutex, NULL) != 0)
+	{
+		fprintf(stderr, "Error: Fallo al inicializar el mutex.\n");
+		free(list->data);
+		exit(EXIT_FAILURE);
+	}
 }
