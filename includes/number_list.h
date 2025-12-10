@@ -17,6 +17,8 @@ typedef struct
 void parse_and_validate_args(int argc, char **argv, int *n_threads, int *n_items);
 void init_list(NumberList *list, int n_items, int n_threads);
 void print_list(NumberList *list);
+void order_list(NumberList *list);
+
 
 
 

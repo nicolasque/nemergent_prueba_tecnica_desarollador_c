@@ -18,7 +18,13 @@ int main(int argc, char **argv)
 
 	launch_threads(n_threads, n_items, &positive_list, &negative_list);
 
+
+	order_list(&positive_list);
+	order_list(&negative_list);
+
+	printf("======Lista de numeros positivos========\n");
 	print_list(&positive_list);
+	printf("======Lista de numeros negativos========\n");
 	print_list(&negative_list);
 
 	return 0;
