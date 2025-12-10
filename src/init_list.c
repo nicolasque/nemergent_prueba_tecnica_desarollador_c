@@ -23,12 +23,12 @@ void init_list(NumberList *list, int n_items, int n_threads)
 	}
 }
 
-
-void free_list(NumberList *list) {
-    if (list->data) {
-        free(list->data);
-        list->data = NULL;
-    }
-    pthread_mutex_destroy(&list->mutex);
+void free_list(NumberList *list)
+{
+	if (list->data)
+	{
+		free(list->data);
+		list->data = NULL;
+	}
+	pthread_mutex_destroy(&list->mutex);
 }
-

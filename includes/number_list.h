@@ -5,7 +5,6 @@
 
 #include "libs.h"
 
-
 typedef struct
 {
 	int *data;
@@ -19,8 +18,5 @@ void init_list(NumberList *list, int n_items, int n_threads);
 void print_list(NumberList *list);
 void order_list(NumberList *list);
 void free_list(NumberList *list);
-
-
-
 
 #endif // NUMBER_STRUCT_H
