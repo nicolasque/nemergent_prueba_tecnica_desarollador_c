@@ -31,9 +31,14 @@ void *thread_routine(void *arg) {
     unsigned int seed = args->seed_time;
     int num;
 
-	printf("Hola soy el proceso:  %d\n", args->index);
+	// printf("Hola soy el proceso:  %d\n", args->index);
     for (int i = 0; i < args->items_to_produce; i++) {
+		// printf("Seed: %d\n", seed);
         num = (int)rand_r(&seed);
+
+        if (rand_r(&seed) % 2 != 0) {
+            num = -num;
+        }
 
 		// printf("Numero: %d, generado por: %d\n", num, args->index);
         if (num >= 0) {
