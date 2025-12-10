@@ -8,20 +8,13 @@ int main(int argc, char **argv)
 	NumberList negative_list;
 
 	parse_and_validate_args(argc, argv, &n_threads, &n_items);
-
-
-	printf("Numero de threads %d\n", n_threads);
-	printf("Numero de items %d\n", n_items);
-
 	init_list(&positive_list, n_items, n_threads);
 	init_list(&negative_list, n_items, n_threads);
 
 	launch_threads(n_threads, n_items, &positive_list, &negative_list);
 
-
 	order_list(&positive_list);
 	order_list(&negative_list);
-
 	printf("======Lista de numeros positivos========\n");
 	print_list(&positive_list);
 	printf("======Lista de numeros negativos========\n");

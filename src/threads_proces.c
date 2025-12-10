@@ -8,7 +8,7 @@ static void add_number(NumberList *list, int number)
 		size_t new_capacity = list->capacity * 1.2;
 		int *new_data = realloc(list->data, new_capacity * sizeof(int));
 
-		printf("=============\nHA CRECIDO LA LISTA\n=============\n");
+		// printf("=============\nHA CRECIDO LA LISTA\n=============\n");
 		if (!new_data)
 		{
 			fprintf(stderr, "Error: Fallo fatal en realloc.\n");
@@ -20,7 +20,7 @@ static void add_number(NumberList *list, int number)
 		list->capacity = new_capacity;
 	}
 	list->data[list->count] = number;
-	printf("Se ha añadido el numero: %d\n", number);
+	// printf("Se ha añadido el numero: %d\n", number);
 	list->count++;
 	pthread_mutex_unlock(&list->mutex);
 }
